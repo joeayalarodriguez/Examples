@@ -1,0 +1,61 @@
+<apex:page standardController="Opportunity" extensions="EjemplovisualforceControlador_ctr">
+    <apex:slds />
+    <div class="slds-scope">
+    <apex:form >
+        
+        <apex:pageBlock title="Validación de oportundiades" mode="edit" tabStyle="Account">  
+            <apex:pageMessages />
+            <apex:pageBlockSection title="Cargar Oportunidad">
+              	<apex:outputLabel value="Ingrese el Id de la oportunidad"></apex:outputLabel>
+                <apex:inputText value="{!Opportunidadentrantestr}"  />
+                
+                <apex:outputField value="{!Opportunidad.Name}"/>
+                <apex:outputField value="{!Opportunidad.Amount}"/> 
+            	<apex:outputField value="{!Opportunidad.StageName}"/>
+            	<apex:outputField value="{!Opportunidad.CloseDate}"/>
+            	<apex:outputField value="{!Opportunidad.Valor_fee_recargo__c}"/>              
+                
+                
+            </apex:pageBlockSection>        
+           
+            
+            <apex:pageBlockSection title="Productos">
+                <apex:pageBlockTable value="{!Opportunidad.OpportunityLineItems}" var="prod"> 
+                    <apex:column value="{!prod.name}"/>
+                    <apex:column value="{!prod.ListPrice}"/>
+                    <apex:column headerValue="Stage">
+                     <apex:inputField value="{!prod.Quantity}"/>
+                    </apex:column>
+                    
+                </apex:pageBlockTable>
+                <apex:image value="https://img.freepik.com/free-vector/digital-technology-background-banner-design_1017-14297.jpg?size=626&ext=jpg" />  
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Información Requerida para el cálculo" columns="2">
+                
+                <apex:outputLabel value="Ingrese al valor estimado"></apex:outputLabel>
+            	<apex:inputText value="{!valor1}"  />
+            	<apex:outputLabel value="Ingrese al valor de impuestos"></apex:outputLabel>
+            	<apex:inputText value="{!valor2}"  /> 
+                <apex:outputLabel value="Valor total con impuestos"></apex:outputLabel>
+                <apex:outputText value="{!Resultado}" />
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="ejemplo de grafico personalizado">                
+                <apex:chart height="350" width="450" data="{!pieData}">
+                    <apex:pieSeries dataField="data" labelField="name"/>
+                    <apex:legend position="right"/>
+                </apex:chart>
+            </apex:pageBlockSection>
+            
+             <apex:pageBlockButtons location="bottom">
+                 <apex:commandButton value="Cargar Oportunidad" action="{!cargaroportunidad}"/>
+                 <apex:commandButton value="sumar" action="{!sumar}"/>
+             </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <!-- asi se hace un comentario -->
+        
+       hello world   
+    </apex:form> 
+        </div>
+</apex:page>

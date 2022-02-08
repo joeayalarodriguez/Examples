@@ -1,0 +1,23 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" controller="PruebaControlador_ctr" access="global" >
+    <aura:attribute name="StrNombre" type="String" access="public" default="AAAAA"/>
+    <aura:attribute name="StrApellido" type="String" access="public"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.ObtenerNombre}"/>
+    
+    
+	<div class="row">
+        <lightning:input aura:id="Nombrefld" name="input3" label="Nombre" value="{!v.StrNombre}" placeholder="type here..." disabled="false"/>
+    </div>
+    
+    <aura:if isTrue="{!v.StrNombre == 'Joseph'}" >
+        <lightning:input aura:id="Apellidofld" name="input3" label="Apellido" value="{!v.StrApellido}" placeholder="type here..." disabled="false"/>
+        <aura:set attribute="else">
+            You can’t edit this.
+        </aura:set>
+    </aura:if>
+	<lightning:buttonIcon aura:id="boton" iconName="utility:down"  size="large"  onclick="{!c.handleClick}"   variant="bare" alternativeText="View More" />
+    
+    
+    
+    {!v.StrNombre}
+</aura:component>

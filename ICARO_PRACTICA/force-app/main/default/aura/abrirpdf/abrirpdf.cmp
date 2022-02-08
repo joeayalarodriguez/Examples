@@ -1,0 +1,31 @@
+<aura:component controller="abrirpdf_ctr" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	 
+<ltng:require scripts="{!join(',',$Resource.JSLib + '/Stuk-jszip-9fb481a/dist/jszip.min.js',
+                           $Resource.ADM_JSPDF + '/jsPDF-1.3.2/jspdf.js',
+                           $Resource.ADM_JSPDF + '/jsPDF-1.3.2/dist/jspdf.debug.js',
+                           $Resource.ADM_JSPDF + '/jsPDF-1.3.2/dist/jspdf.min.js',
+                           $Resource.FileSaverCa + '/src/FileSaver.js')}"/>
+    
+    <aura:attribute name="Loadingcertifi" type="String" default="false" />
+    <aura:attribute name="FormID" type="String" default="001460000059GDzAAM"  ></aura:attribute>
+    
+    <aura:if isTrue="{!v.Loadingcertifi != 'false'}">
+			                <div Style="margin: 3% 0% 3% 0%;">
+						      	<lightning:spinner class="SpinnerClass"
+						      	size="small"
+						      	variant="brand"
+						      	alternativeText="Loading..." />
+							</div>
+        <aura:set attribute="else" >
+            <lightning:button label="Certificado de inscripción"
+                              disabled="{!v.isDisabled}" 
+                              class="slds-m-top--medium"
+                              variant="brand"
+                              onclick="{!c.DescargarFormularioInscripcion}"/>
+        </aura:set>
+	</aura:if>
+    
+    
+    
+ 
+</aura:component>

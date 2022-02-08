@@ -1,0 +1,18 @@
+<apex:page showHeader="false" sidebar="false">
+    Esta es mi visualforce
+    
+    <apex:includeLightning />    
+    <apex:includeScript value="/lightning/lightning.out.js" />
+    <div id="LightningComponentid" />    
+    <script>
+    $Lightning.use("c:componentinVisualforceApp", function() {
+        $Lightning.createComponent("c:componentinVisualforce_cmp",
+          { 
+          },
+          "LightningComponentid",
+          function(cmp) {
+             console.log('Display Lightning component in visualforce page');
+          });
+    });
+    </script>
+</apex:page>

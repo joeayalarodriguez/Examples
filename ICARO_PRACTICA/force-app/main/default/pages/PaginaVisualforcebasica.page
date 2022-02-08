@@ -1,0 +1,33 @@
+<apex:page standardController="Contact" >
+    <apex:form >        
+        <apex:pageBlock title="Generar Contacto">
+            <apex:pageBlockSection columns="2">
+                <apex:inputField value="{!Contact.FirstName}"/>
+                <apex:inputField value="{!Contact.LastName}"/>
+                <apex:inputField value="{!Contact.Email}"/>
+                <apex:inputField value="{!Contact.Birthdate}"/>
+                
+               
+                    {! $User.FirstName } {! $User.LastName } 
+                   ({! $User.Username })
+                    <p> Today's Date is {! TODAY() } </p>
+                    <p> Next week it will be {! TODAY() + 7 } </p>
+       
+           
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="2" title="Validaciones con formulas">
+                <p>The year today is {! YEAR(TODAY()) }</p>
+                <p>Mañana será el dia  {! DAY(TODAY() + 1) }</p>
+                <p>el maximo numero es: {! MAX(1,2,3,4,5,6,5,4,3,2,1) } </p>
+                <p>The square root of 49 is {! SQRT(49) }</p>
+                <p>Is it true?  {! CONTAINS('salesforce.com', 'force.com') }</p>
+            </apex:pageBlockSection>
+            
+            
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Save"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>        
+    </apex:form>
+</apex:page>

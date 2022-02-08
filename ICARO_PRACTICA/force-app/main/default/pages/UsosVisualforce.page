@@ -1,0 +1,26 @@
+<apex:page standardController="Contact">
+    <apex:form >
+        <!-- este es mi comentario -->
+        <apex:pageBlock title="Generar Contacto" tabStyle="Product2">
+            <apex:pageBlockSection columns="2" title="Información General" rendered="{! CONTAINS('force', 'force')}">
+                <apex:inputField value="{!Contact.FirstName}" required="true"/>
+                <apex:inputField value="{!Contact.LastName}"/>
+                <apex:inputField value="{!Contact.Email}"/>
+                <apex:inputField value="{!Contact.Birthdate}"/>
+            </apex:pageBlockSection> 
+            <apex:pageBlockSection columns="2" title="Usando Variables">
+                {!$User.FirstName} {! $User.LastName}
+                ({!$User.UserName})
+                <P>Hoy es {!NOW()}</P>
+                <P>Mañana es {!TODAY()+1}</P>
+                <P>El numero maximo es {! MAX(1,2,3,10)}</P>
+                <P>Esto es Verdadero ? {! CONTAINS('Salesforce', 'force.com')}</P>
+                <P>{! CONTAINS('force', 'force')}</P>
+             </apex:pageBlockSection>    
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Guardar" rendered="true"/>
+        	</apex:pageBlockButtons>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

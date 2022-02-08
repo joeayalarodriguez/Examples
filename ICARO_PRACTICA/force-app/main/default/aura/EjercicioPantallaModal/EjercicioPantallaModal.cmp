@@ -1,0 +1,49 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<!--Definición de atributos-->
+    <aura:attribute name="titulo" type="String" default="Titulo"/>
+    <aura:attribute name="mensaje" type="String" default="contenido"/>
+    <aura:attribute name="verModal" type="Boolean" default="false"/>
+    
+    <div class="demo-only" style="height: 640px;">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1"
+                 class="slds-modal slds-fade-in-open"> 
+            
+        	<div class="slds-modal__container" style="max-width; 75%">
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{! c.closemodal}" 
+                                          alternativeText="Cerrar Formulario"
+                                          variant="bare-inverse"
+                                          class="slds-modal__close"/>
+                                          
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning:layout multipleRows="true" class="onlyborder">
+                        <!--item 1 titulo-->
+                        <lightning:layoutItem padding="around-small" size="12">
+                            <h2 class=" textBold slds-text-heading_large slds-text-align_center">
+                                {!v.titulo}
+                            </h2>
+                        </lightning:layoutItem>
+                        <!--item 2 contenido-->
+                        <lightning:layoutItem padding="around-small" size="12">
+                           {!v.mensaje}                           
+                        </lightning:layoutItem>
+                        <!--item 3 carrusel -->
+                        <lightning:layoutItem padding="around-small" size="12">
+                            <c:CarruselPuma />                         
+                        </lightning:layoutItem>     
+                    </lightning:layout>
+                </div>               
+                <footer class="slds-modal__footer">
+                	<div class="slds-text-align_center">
+                        <lightning:button variant="brand" class="colorbutton"
+                                          label="Cerrar Formulario"
+                                          title="Cerrar"
+                                          onclick="{! c.closemodal}"/>
+                    </div>
+                </footer>                
+            </div>            
+        </section>
+    </div>    
+</aura:component>

@@ -1,0 +1,22 @@
+<apex:page >
+   <apex:includeScript value="{!$Resource.jQuery2}"/> 
+    <script type ="text/javascript">
+    jQuery(document).ready(function(){
+    	jQuery("#message").html("Ejemplo texto de uso de Jquery desde un recurso estático");	
+    });
+    </script>
+    
+    <h2 id="message">
+    </h2> 
+    texto
+    
+    <apex:stylesheet value="{!URLFOR($Resource.jQueryMobile,'jquery.mobile-1.2.1/jquery.mobile-1.2.1.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.jQueryMobile,'jquery.mobile-1.2.1/jquery.mobile-1.2.1.js')}"/>
+    
+    <div >
+	     <H3>Imagenes</H3> 
+        <apex:image url="{!URLFOR($Resource.jQueryMobile, 'jquery.mobile-1.2.1/images/icons-36-black.png')}"/>
+        <apex:image url="{!URLFOR($Resource.jQueryMobile, 'jquery.mobile-1.2.1/images/ajax-loader.gif')}"/>
+        <apex:image value="{!$Resource.Image}"/>
+    </div>
+</apex:page>

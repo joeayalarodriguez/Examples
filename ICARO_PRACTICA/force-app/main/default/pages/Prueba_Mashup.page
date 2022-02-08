@@ -1,0 +1,15 @@
+<apex:page controller="Open_Chat_ctr"  tabStyle="Product2" extensions="Open_Chat_ctr">
+    <apex:form id="form">
+         <apex:pageBlock id="bloc"  >
+                <apex:actionFunction action="{!retornar}" name="hold"/>            
+                <!-- <apex:iframe src="https://www.cinecolombia.com/" /> -->
+                 <!-- <apex:iframe src="https://auraportal.sura.com.pa/Home/BPM_Mensajes_Crear.aspx?id=157&pag=107&idPortal=0" height="300px" width="100%" scrolling="true" id="idtheIframe1" /> --> 
+                <apex:iframe src="https://js.devexpress.com/Demos/SalesViewer/Dashboard/Sectors" />
+        </apex:pageBlock> 
+                  <apex:pageBlock id="blocbtn" >
+                        <center> 
+                            <apex:commandButton action="{!retornar}" value="Regresar" id="Regresar" status="loadingStatus" />
+                        </center>
+            </apex:pageBlock>
+    </apex:form>    
+</apex:page>

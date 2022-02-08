@@ -1,0 +1,72 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<!--1 Ejemplo Visualización de componente -->
+        <div class="slds-card__body slds-card__body_inner slds-p-top_medium">Padding</div>
+        <div class="slds-card__body slds-card__body_inner slds-p-left_x-small">Component Blueprints</div>
+    	
+    <div class="slds-card">
+            Avatar<br/>
+            <lightning:avatar size="large"   src="{!$Resource.IconPerson}" initials="CR" fallbackIconName="standard:person_account" alternativeText="Cindy Rice" class="slds-m-right_small"/>
+           
+            Esta es una Tarjeta Component BluePrint <br/>
+            Salesforce.com <br/>
+            <button class="slds-button slds-button_brand slds-m-top_small slds-m-around_medium" >Guardar</button>
+            <button class="slds-button slds-button_destructive slds-m-top_small slds-m-around_medium" >Guardar</button>
+     </div>
+    Tarjeta 2
+     <lightning:card footer="Clima Bogotá" title="Información climatica">
+        <aura:set attribute="actions">
+            <lightning:button label="New"/>
+        </aura:set>
+        <p class="slds-p-horizontal_small">
+            Bogotá 
+        </p>
+        <p class="slds-p-horizontal_small">
+            Mayormente Nublado 
+        </p> 
+    </lightning:card>
+      
+    <!--2    Usar Atributos -->
+         <aura:attribute name="greeting" type="String" default=" Mundo" /> 
+        <div class="slds-p-horizontal_x-large"> Hola , {!v.greeting}!.</div>
+    <!--Usando etiquetas-->
+        {!$Label.c.Saludo + v.greeting}  
+    
+    <!-- 3    Agregar elementos de formulario-->    
+      <input class="slds-input" aura:id="myInput" type="text" />
+      <button class="slds-button slds-button_brand" name="Modificar" type="submit">Update</button>
+      
+    <!--4   Input -->
+      <div class="slds-form-element">
+        <label class="slds-form-element__label" for="text-input-id-1">Digite su nombre</label>
+        <div class="slds-form-element__control">
+        	<input id="text-input-id-1" placeholder="Digite aqui algun texto" class="slds-input" type="text" value="" />
+        </div>
+      </div>
+    
+    <div class="slds-form-element">
+        <label class="slds-form-element__label" for="text-input-id-1">Digite su cargo</label>
+        <div class="slds-form-element__control">
+        	<input id="text-input-id-1" placeholder="Digite aqui algun texto" class="slds-input" type="text" value="" />
+        </div>
+      </div>
+    
+    <button class="slds-button slds-button_brand">Guardar</button>
+    <button class="slds-button slds-button_destructive">Eliminar</button>
+    <button class="slds-button slds-button_success">Aceptar</button>
+    
+    <p><lightning:dynamicIcon type="eq" option="play" alternativeText="On a call"/></p>
+     <lightning:avatar size="x-small" src="/docs/component-library/app/images/examples/avatar2.jpg" initials="JD" fallbackIconName="standard:person_account" alternativeText="Jane Doe" class="slds-m-right_small"/>
+    <lightning:avatar size="small"   src="/docs/component-library/app/images/examples/avatar3.jpg" initials="TP" fallbackIconName="standard:person_account" alternativeText="Tony Price" class="slds-m-right_small"/>
+    <lightning:avatar size="medium"  src="/docs/component-library/app/images/examples/avatar1.jpg" initials="RE" fallbackIconName="standard:person_account" alternativeText="Ryan Eddie" class="slds-m-right_small"/>
+    <lightning:avatar size="large"   src="/docs/component-library/app/images/examples/avatar2.jpg" initials="CR" fallbackIconName="standard:person_account" alternativeText="Cindy Rice" class="slds-m-right_small"/>
+    <!--https://www.lightningdesignsystem.com/components/input/#site-main-content-->
+    
+    
+    
+
+
+
+
+
+    
+</aura:component>

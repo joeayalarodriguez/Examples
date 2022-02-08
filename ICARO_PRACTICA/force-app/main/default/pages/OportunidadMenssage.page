@@ -1,0 +1,27 @@
+<apex:page id="page" standardController="Opportunity" showHeader="false" standardStylesheets="false"  sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+  
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+        <head> 
+            <apex:includeScript value="{!$Resource.jQuery2}"/>  
+            <meta charset="utf-8" />
+            <meta http-equiv="x-ua-compatible" content="ie=edge" />
+            <title>Creación de oportunidad</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <apex:slds />
+        </head> 
+        <div class="slds-scope"><br/><br/><br/>
+        <apex:form id="formEtapaCierre">        
+                   <center>
+                        <strong><h3 class="slds-notify--toast slds-theme--warning" role="alert" style="height: 70px; width: 130px; padding: 2rem;"><center><font size="4">Las Oportunidades sólo pueden ser creadas desde una cuenta</font></center></h3></strong><br/><br/><br/>
+                   </center>
+                    
+        <div class="slds-col slds-no-flex slds-grid slds-grid_align-space">
+         <apex:commandButton styleClass="slds-button slds-button_brand" id="volver2" status="actStatusPageAll" value="Regresar" action="{!Cancel}"/>
+                       
+         </div>
+        </apex:form>      
+               
+        </div>
+ </html>  
+
+</apex:page>

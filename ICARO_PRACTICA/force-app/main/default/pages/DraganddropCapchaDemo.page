@@ -1,0 +1,541 @@
+<apex:page showHeader="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">     
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    </head>
+    <body style="background-color:#fafafc;">  <!--#ffd000 -->
+    <br/>
+    <div class="slds-grid">
+        <div class="slds-col slds-size_1-of-12">
+            
+        </div>
+        <div class="slds-col slds-size_1-of-12"> 
+            <div >                     
+                <p>
+                    <center>
+                         &nbsp;  &nbsp;<apex:image value="{!URLFOR($Resource.joe3d)}" width="14%" height="14%"/> <!--logo3d-->
+                    </center>
+                   
+                </p>
+            </div>
+        </div>
+        <div class="slds-col slds-size_1-of-12"></div>
+        </div>
+    <center>
+        <div class="slds-grid">
+            <div class="slds-col slds-size_2-of-6"></div>
+            <div class="slds-col slds-size_2-of-6">
+                <div Id="iddiv">
+                    <span style="font-family: Arial Unicode MS; font-size: 16pt; align=center; !important;">
+                        <b>Icaro Software </b>
+                    </span>
+                </div>
+            </div>
+            <div class="slds-col slds-size_2-of-6"></div>
+        </div>
+    </center>
+
+    <style type='text/css'>
+        
+      body{    
+        justify-content: center ;
+        align-items: center ;        
+        }
+        .u-name,
+        .p-word,
+        .l-button{
+        padding:5px;
+        border-radius:5px; 
+        }
+        .u-name{
+        float:left;
+        margin-right: 20px;
+        }
+        .box{    
+        
+        clear:both;
+        float:left;
+        width:135px;
+        height:190px;
+        padding:10px;
+        margin-top:10px;
+        border:1px solid #ccc;
+        border-radius:5px;
+        background-color:#1d1e22;
+        background-image: url("{!URLFOR($Resource.Siluetastatue)}");
+        vertical-align: middle !important;
+        justify-content: center !important;      
+        align-items: center !important;  
+        }
+        
+        #box {
+        	position: absolute;
+         	
+        }
+        #stat-img{        
+            width: 100px;
+            height: 190px;  
+            
+        }
+        .images{
+             margin-top:10px;
+            justify-content: center ;
+            align-items: center ; 
+        }
+        .box-text{
+        font-size:10px;
+        margin:0;
+        
+        }
+        .th {
+        	text-align: none !important;        
+        }
+        
+        .sld_1 .img-texto{
+         width: calc(60% - 60px);
+        }
+        
+        #sld_2 {
+         display: none;
+        }
+        
+        .boton-color{
+           padding: 5px;
+            font-weight: 70;
+            font-size: 12px;
+            border-radius: 6px;
+            border: 1px solid #0016b0;
+            text-decoration: none;
+            font-weight: bold !important;
+        }
+        
+        .boton-color:hover{
+           background: #1a1446;
+           color: #fff;
+        }
+       .img-texto{            
+                    width: 95%;
+                    height: 150px;
+                 
+                }
+                .img-texto .informacion{ 
+                    left: 0;
+                    width: 80%;
+                    z-index: 999;
+                    background: #fafafc;
+                    
+                    padding: 0px 50px 50px 0px;                    
+                   
+                    overflow: auto;
+                    font-family: Arial Unicode MS;
+                    font-size: 12px!important;
+                }
+    
+    .img-texto .informacion h2{
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+    
+    .img-texto .informacion p {
+        font-size: 16px;
+        width: calc(100% - 100px);
+        text-align: justify;
+    }     
+        
+      @media screen and (-ms-high-contrast: none) {
+
+         .embeddedServiceHelpButton{
+            display: flex ;
+            justify-content: center ;
+            align-items: center ;
+            height: 200px;
+            position: static ;
+            background: #ffd000;
+
+         }
+        .embeddedServiceHelpButton .helpButton {
+         
+            display: flex ;
+            justify-content: center ;
+            align-items: center ;
+            position: static ;
+            height: 200px;
+        }  
+
+         .embeddedServiceHelpButton .helpButton .uiButton {
+           width : 300px;
+        }
+   }
+
+         @media screen and (-ms-high-contrast: active) {
+
+         .embeddedServiceHelpButton{
+            display: flex ;
+            justify-content: center ;
+            align-items: center ;
+            height: 200px;
+            position: static ;
+            background: #ffd000;
+
+         }
+        .embeddedServiceHelpButton .helpButton {
+         
+            display: flex ;
+            justify-content: center ;
+            align-items: center ;
+            position: static ;
+            height: 200px;
+        }  
+            .embeddedServiceHelpButton .helpButton .uiButton {
+             width : 300px;
+        }
+   }
+   	     
+    </style>
+      
+    <style type='text/css'>
+        @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap');
+
+        
+        .message {
+
+            border-width: 0px !important;
+            font-weight: bold !important;
+            font-size: 1.3rem!important;
+            color: white!important;
+            font-family: "Arial Unicode MS";
+        }
+      
+         .embeddedServiceHelpButton{
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            height: 200px;
+            position: initial !important;
+            background: #ffd000!important;
+
+         }
+        .embeddedServiceHelpButton .helpButton {
+         
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            position: initial !important;
+            height: 200px;
+        }
+
+        .embeddedServiceHelpButton .uiButton .helpButtonLabel .message {
+            background: #1A1446 !important;
+
+        }
+        .embeddedServiceHelpButton .helpButton .uiButton {
+            background: #1A1446!important;
+            color: #ffd000!important;
+            width: 500px!important;
+            height: 100px!important;
+            font-size: 1rem!important;
+            font-weight: bold !important;
+            font-family: "Arial Unicode MS";
+            max-width: none!important;
+
+        }
+
+        .embeddedServiceHelpButton .helpButton .helpButtonEnabled:hover::before,
+        .embeddedServiceHelpButton .helpButton .helpButtonEnabled:focus::before {
+            display: none!important;
+        }
+        
+
+        .embeddedServiceSidebarHeader .headerTextContent {
+            width: 100%!important
+        }
+
+        .embeddedServiceSidebarHeader.layout-modal .shortHeader,
+        .embeddedServiceSidebarHeader.layout-modal .shortHeaderContent,
+        .embeddedServiceSidebarHeader.layout-modal .shortHeaderPattern .embeddedServiceSidebar.layout-modal {
+            background: rgba(0, 0, 0, 0.85)
+        }
+
+        .embeddedServiceSidebar.layout-modal .dockableContainer {
+            width: 90% !important;
+        }
+
+
+        @media screen and (min-width: 601px) {
+            .embeddedServiceSidebarHeader.layout-modal .headerText {
+                background: white !important;
+                color: #1A1446!important;
+                font-size: 180%;
+                font-weight: bold !important;
+                font-family: "Arial Unicode MS";
+            }
+
+
+        }
+
+        @media screen and (max-width: 600px) {
+            .embeddedServiceSidebarHeader.layout-modal .headerText {
+                background: white !important;
+                color: #1A1446!important;
+                font-size: 0%;
+                font-weight: bold !important;
+                font-family: "Arial Unicode MS";
+            }
+            .slds-scope .slds-gutters .slds-col {
+                padding-right: 0.1px!important;
+                padding-left: 0.1px!important;
+            }
+
+            .cReembolsoGetInfo .slds-form-element__label {
+                text-overflow: ellipsis!important;
+                white-space: nowrap!important;
+                font-size: 13px!important;
+            }
+            .cReembolsoGetInfo .slds-form-element {
+                margin-bottom: 60px!important;
+                font-size: 13px!important;
+
+            }
+        }
+
+        
+
+        .slds-form-element {
+            font-family: "Arial Unicode MS";
+            font-size: 12pt;
+        }
+
+        .embeddedServiceFlowStateViewer .actionButtonBar {
+            background: white !important;
+        }
+
+        .embeddedServiceSidebarHeader .shortHeaderContent {
+            background: white !important;
+        }
+
+        .embeddedServiceSidebarButton:not(:disabled):focus,
+        .embeddedServiceSidebarButton:not(:disabled):hover {
+            background: #99E5EA !important;
+            color: #1A1446!important;
+        }
+
+        .embeddedServiceSidebarButton {
+            background: #99E5EA !important;
+            color: #1A1446!important;
+            font-weight: bold !important;
+            font-family: "Arial Unicode MS";
+            border-radius: 0%!important;
+            padding-top: 2px!important;
+            padding-left: 50px!important;
+            padding-right: 50px!important;
+            font-size: 15px!important;
+        }
+
+        .embeddedServiceSidebarButton .label,
+        .embeddedServiceSidebarButton:disabled .label {
+            color: #1A1446!important;
+            text-decoration: none !important;
+
+        }
+
+        .embeddedServiceSidebar.modalContaine {
+            font-family: "Arial Unicode MS";
+            font-size: 12pt;
+        }
+
+        .embeddedServiceFlowInput .fieldTitle {
+            font-family: "Arial Unicode MS";
+            font-size: 15px!important;
+        }
+
+        .embeddedServiceFlowInput .uiInput {
+            font-family: "Arial Unicode MS";
+            font-size: 15px!important;
+        }
+
+        .slds-scope .slds-select_container:before {
+            display: none;
+
+        }
+
+        .slds-scope .slds-select_container:after {
+            display: none;
+
+        }
+
+        .slds-scope .slds-input {
+            font-family: "Arial Unicode MS";
+        }
+
+        .slds-scope .slds-radio .slds-form-element__label {
+            font-family: "Arial Unicode MS";
+            color: #1A1446!important;
+            font-size: 15px!important;
+        }
+
+        .slds-scope .slds-select {
+            font-family: "Arial Unicode MS";
+            font-size: 12pt;
+        }
+
+        .slds-scope .slds-form .slds-form__row .slds-form__item .slds-form-element {
+            font-family: "Arial Unicode MS";
+            color: #1A1446!important;
+            font-size: 3px!important;
+        }
+
+        .slds-scope .slds-button_brand,
+        .slds-scope .slds-button--brand {
+            font-family: "Arial Unicode MS";
+            font-weight: bold !important;
+            background: #99E5EA !important;
+            color: #1A1446!important;
+            border: 1px solid #99E5EA !important;
+            padding-top: 2px!important;
+            padding-left: 50px!important;
+            padding-right: 50px!important;
+        }
+
+        .backButton {
+            visibility: hidden !important;
+        }
+
+        .uiButton--default:hover,
+        .uiButton--default:focus,
+        .uiButton--default.is-selected {
+            text-decoration: none !important;
+        }
+    </style>
+
+     <form  id="myDIV">
+          <br/><br/> 
+      		<center>
+               <table >
+                   <tr>
+                       <div id="sld_1">
+                           <center>
+                               <div class="img-texto"> 
+                                   <div class="informacion">
+                                       <h2>Politica de tratamiento de datos </h2>
+                                       <p>Autorizo a Icaro Software S.A., para que con fines estadísticos, comerciales, financieros y administrativos, consulte, transfiera, comparta, solicite, procese, reporte,
+                                           y divulgue con su matriz, filiales, subsidiarias y contratistas, mis datos personales, de conformidad con la Política de Tratamiento de Datos que se encuentra 
+                                           disponible en nuestra  
+                                           <a href="https://www.libertycolombia.com.co/sites/default/files/2019-06/1.PTDPLS.pdf" target="_blank"><b>Politica de tratamiento de datos personales </b></a> </p>
+                                       <button type="button" class="boton-color" onclick="Validateaut()">Si autorizo</button>
+                                       <button type="button" class="boton-color" onclick="printMyPartialPage()">print</button>
+                                       <!--<button type="button" class="boton-color" onclick="detec()">mobile</button>-->
+                                   </div>
+                               </div>         
+                           </center>
+                       </div> 
+                   </tr>
+                   </table>
+                   <div id="sld_2">
+                        <table style="width:400px" >
+                            <tr>
+                                No eres un robot? arrastra la estatua de la libertad para que encaje  
+                            </tr>
+                            <tr>
+                                <th style="width:50%">
+                                    <center>  
+                                        <div id="stat-img" >
+                                            <div id="box" >                                             
+                                           <img id="drag2" src="{!URLFOR($Resource.StatueLibertadreal)}" draggable="true" ondragstart="drag(event)" width="90%" height="90%"/>       
+                                        </div>
+                                        </div>
+                                       
+                                    </center>
+                                    
+                                </th>
+                                <th style="width:50%">
+                                    <div class="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                        <!-- <p class="box-text">No eres un robot</p>
+                                        <p class="box-text">Arrastra las Estatua aquí</p>-->
+                                    </div>
+                                </th>                       
+                            </tr>                  
+                       </table>
+                   </div>
+                   
+              
+             </center>
+   </form>
+
+       <apex:includeScript value="https://code.jquery.com/jquery-2.2.0.min.js"/>
+        <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+   <script type='text/javascript'>
+       
+       function printMyPartialPage(){
+        $('.cButtons').hide();
+        window.print();    
+    }
+             //23-06-2020 JA Captcha ==================            
+         function Validatecap() {
+            var x = document.getElementById("myDIV");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+         }
+        function Validateaut() {
+            var aut = document.getElementById("sld_1");               
+            var cap = document.getElementById("sld_2");     
+            aut.style.display = "none";
+            cap.style.display = "block";                 
+        } 
+        
+        function detec() { 
+            var isMobile = window.orientation > -1; 
+            //alert(isMobile ? 'Mobile' : 'Not mobile'); 
+        }
+        //----------------------------------------------------------------
+         window.onload = function() {
+            // Element to drag.
+            var box = document.getElementById('box');            
+            box.addEventListener('touchmove', function(e) {
+            var touchLocation = e.targetTouches[0];
+            box.style.left = touchLocation.pageX + 'px';
+            box.style.top = touchLocation.pageY + 'px';          
+            })
+            box.addEventListener('touchend', function(e) {
+                //Current position.
+                var x = parseInt(box.style.left);
+                var y = parseInt(box.style.top); 
+                //alert('posicion actual x ' + x + ' y '+y); 
+                if((x >=191 && x <= 347) && (y >= 144 && y <=245)){
+                    //alert('Se genero un movimiento ');
+                    Validatecap();
+                    flowproces();
+                }
+            })              
+        }        
+       
+       //----------------------------------------------------------------
+         function flowproces(){
+             window.location = 'https://capacitaciondevelopers-developer-edition.na142.force.com/login/LoginSite' ;
+         }
+
+        var verifyCaptcha1=0;
+        function allowDrop(ev){
+            ev.preventDefault();
+        }
+        function drag(ev){
+            ev.dataTransfer.setData("Text",ev.target.id);
+        }
+        function drop(ev){
+            ev.preventDefault();
+            var data=ev.dataTransfer.getData("Text");
+            ev.target.appendChild(document.getElementById(data));                    
+            var verifyCaptcha1=1;
+            console.log('dataimage ', data , 'verifyCaptcha1 ', verifyCaptcha1);
+            verifyCaptcha1=1;
+            Validatecap();
+            flowproces() 
+        }
+            //=========================================
+     </script>
+    </body>
+
+
+</apex:page>

@@ -1,0 +1,26 @@
+<apex:page showHeader="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">     
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    </head>
+    <body style="background-color:#fafafc;">  <!--#ffd000 -->
+    <br/>
+    <div class="slds-grid">
+        <div class="slds-col slds-size_1-of-12">
+            
+        </div>
+        <div class="slds-col slds-size_1-of-12"> 
+            <div >                     
+                <p>
+                    <center>
+                         &nbsp;  &nbsp;<apex:image value="{!URLFOR($Resource.joe3d)}" width="50%" height="50%"/> <!--logo3d-->
+                    </center>
+                   
+                </p>
+            </div>
+        </div>
+        <div class="slds-col slds-size_1-of-12"></div>
+        </div>
+      
+        </body>
+
+</apex:page>

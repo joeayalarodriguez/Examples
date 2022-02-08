@@ -1,0 +1,25 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <lightning:carousel disableAutoRefresh="false" disableAutoScroll="false">
+        <lightning:carouselImage
+                                 src="{!$Resource.Puma1}"
+                                 header = "Puma Kneu men"
+                                 description = "Especial para correr"
+                                 alternativeText = "First card accessible description."
+                                 href = "https://joeayalaconsultor-dev-ed.lightning.force.com/lightning/r/Report/00O46000004atl0EAA/view?queryScope=userFolders">
+        </lightning:carouselImage>
+        <lightning:carouselImage
+                                 src="{!$Resource.Puma2}"
+                                 header = "Puma Artico"
+                                 description = "Diseño que conquista"
+                                 alternativeText = "Second card accessible description."
+                                 href = "https://www.flipkart.com">
+        </lightning:carouselImage>
+        <lightning:carouselImage
+                                 src="{!$Resource.Puma3}"
+                                 header = "Puma Bargains"
+                                 description = "Nuevo diseño para mujeres."
+                                 alternativeText = "Third card accessible description."
+                                 href = "https://www.flipkart.com">
+        </lightning:carouselImage>
+    </lightning:carousel>
+</aura:component>

@@ -1,0 +1,74 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	Ejemplo de visualizacion de un componente básico
+    asi funciona!!!
+    <aura:attribute name="mensaje" Type="String" default=" controlada desde un atributo!!!"/>
+    <aura:attribute name="listademensajes" Type="List" default ="['mensaje #1','Mensaje #2 ', 'Mensaje #3 ']"/>
+    
+    <Br/>localizando la posición dentro de una lista ......
+    <P>mensaje: {!v.listademensajes[0]}</P>
+    <P>mensaje: {!v.listademensajes[1]}</P>
+    <P>mensaje: {!v.listademensajes[2]}</P>
+    
+   <Br/>iterando dentro de una lista ...
+    <aura:iteration items="{!v.listademensajes}" var="msg">
+    <p>mensaje dentro de la iteracion {!msg}</p>
+    </aura:iteration> 
+
+    
+    <p><ui:outputText value="{!'Esta es mi expresion' + v.mensaje}"/></p>
+    <div class="slds-p-horizontal_x-large" >Dentro de un div, {!v.mensaje}!. </div>
+    
+    {!$Label.c.mensaje_de_error + v.mensaje}  usando etiquetas personalizadas
+    <input class="slds-input" type="text"/>
+    <button class="slds-button slds-button_brand" name="Modificar" type="submit">Modificar</button>  
+    <button class="slds-button slds-button_destructive" name="Modificar" type="submit">Eliminar</button>
+    
+    <Br/>Tipos de Botones <Br/>
+    <button class="slds-button">Button</button>
+    <button class="slds-button slds-button_neutral">Neutral Button</button>
+    <button class="slds-button slds-button_brand">Brand Button</button>
+    <button class="slds-button slds-button_outline-brand">Outline Brand Button</button>
+    <button class="slds-button slds-button_destructive">Eliminar</button>
+    <button class="slds-button slds-button_text-destructive">Text Destructive Button</button>
+    <button class="slds-button slds-button_success">Aceptar</button>   
+    
+
+   
+        
+        <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_warning" role="alert">
+            <span class="slds-assistive-text">warning</span>
+            <span class="slds-icon_container slds-icon-utility-warning slds-m-right_x-small" title="Description of icon when needed">
+               
+                <c:svgIcon svgPath="/resource/SLDS/assets/icons/standard-sprite/svg/symbols.svg" category="standard" size="large" name="user" />
+
+            </span>
+            <h2>Your browser is outdated. Your Salesforce experience may be degraded.
+                <a href="javascript:void(0);">More Information</a>
+            </h2>
+            <div class="slds-notify__close">
+                <button class="slds-button slds-button_icon slds-button_icon-small" title="Close">
+                   <c:svgIcon svgPath="/resource/SLDS/assets/icons/standard-sprite/svg/symbols.svg" category="standard" size="large" name="user" />
+
+
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+            </div>
+        </div>  
+    
+       <!-- BASIC GRID EXAMPLE -->
+<div class="slds-grid">
+  <div class="slds-col slds-size_4-of-6">Column 1</div>
+  <div class="slds-col slds-size_1-of-6">Column 2</div>
+  <div class="slds-col slds-size_1-of-6">Column 3</div>
+</div>
+
+
+
+    
+    
+    
+    
+    
+    
+    
+</aura:component>

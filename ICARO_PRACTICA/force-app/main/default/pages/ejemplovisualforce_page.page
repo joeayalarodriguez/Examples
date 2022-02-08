@@ -1,0 +1,51 @@
+<apex:page standardController="Opportunity" recordSetVar="opportunities" name="Opportunity" extensions="ejemplovisualforce_ctr">
+   <apex:form >
+     <apex:pageBlock title="Validación de oportundiades" mode="edit" tabStyle="Account">
+         <apex:pageMessages />
+         <apex:image value="https://developer.salesforce.com/files/salesforce-developer-network-logo.png" width="220" height="55"/>  
+         
+         <apex:pageBlockSection title="Cargar Oportunidad">
+            <apex:outputLabel value="Ingrese el Id de la oportunidad"></apex:outputLabel>
+            <apex:inputText value="{!Opportunidadentrantestr}"  />
+            <apex:outputField value="{!Opportunidad.Name}"/>
+            <apex:outputField value="{!Opportunidad.Amount}"/> 
+            <apex:outputField value="{!Opportunidad.StageName}"/>
+            <apex:outputField value="{!Opportunidad.CloseDate}"/>
+            <apex:outputField value="{!Opportunidad.Valor_fee_recargo__c}"/>  
+        </apex:pageBlockSection> 
+        <apex:pageBlockSection title="Información Requerida para el cálculo" columns="2">
+            
+            <apex:outputLabel value="Ingrese al valor estimado"></apex:outputLabel>
+            <apex:inputText value="{!valor1}"  />
+            <apex:outputLabel value="Ingrese al valor de impuestos"></apex:outputLabel>
+            <apex:inputText value="{!valor2}"  />
+            <apex:outputLabel value="Valor total con impuestos"></apex:outputLabel>
+            <apex:outputText value="{!Resultado}" />
+           
+            
+        </apex:pageBlockSection>
+             
+        <apex:pageBlockSection title="Información personal">
+            <apex:outputText value="hora de ingreso de la información : {0,date,yyyy.MM.dd G 'at' HH:mm:ss z}">
+             <apex:param value="{! NOW() }" />
+            </apex:outputText>
+        </apex:pageBlockSection>             
+    
+          
+         <apex:pageBlockButtons location="top">
+            <apex:commandButton value="Almacenar" action="{!almacenar}"/>
+            <apex:commandButton value="Cargar Oportunidad" action="{!cargaroportunidad}"/>
+            <apex:commandButton value="sumar" action="{!sumar}"/>
+         </apex:pageBlockButtons>
+       <apex:pageBlockTable value="{!Opportunidad.OpportunityLineItems}" var="prod"> 
+              <apex:column value="{!prod.name}"/> 
+              <apex:column headerValue="Stage">
+                 <apex:inputField value="{!prod.Quantity}"/>
+              </apex:column>
+             <apex:column headerValue="Close Date">
+               <apex:inputField value="{!prod.ListPrice}"/>
+             </apex:column>
+         </apex:pageBlockTable>
+      </apex:pageBlock>
+   </apex:form>
+</apex:page>

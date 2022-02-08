@@ -1,0 +1,104 @@
+<apex:page >
+ <script>
+    var verifyCaptcha1=false;
+    function allowDrop(ev){
+        ev.preventDefault();
+    }
+    function drag(ev){
+        ev.dataTransfer.setData("Text",ev.target.id);
+    }
+    function drop(ev){
+        ev.preventDefault();
+        var data=ev.dataTransfer.getData("Text");
+        ev.target.appendChild(document.getElementById(data));
+        console.log('imagen seleccionada ' ,data);
+        if(data == "drag2"){ 
+            window.location = 'https://capacitaciondevelopers-developer-edition.na142.force.com/login' ;
+        }
+        
+ 
+        
+    }
+</script>   
+    
+<style type="text/css">
+    html{
+  background-color:#ffd000;
+}
+body{
+  width:500px;
+  margin:0 auto;
+  font-family:Helvetica, Arial, sans-serif;
+  background-color:#ffd000;  
+}
+h2,
+p{
+  color:#ffd000;
+}
+.u-name,
+.p-word,
+.l-button{
+  padding:5px;
+  border-radius:5px; 
+}
+.u-name{
+  float:left;
+  margin-right: 20px;
+}
+.box{
+  clear:both;
+  float:left;
+  width:90px;
+  height:120px;
+  padding:10px;
+  margin-top:10px;
+  border:1px solid #ccc;
+  border-radius:5px;
+  background-color:#1d1e22
+}
+   
+.box-text{
+  font-size:10px;
+  margin:0;
+    
+}
+
+.l-button{
+  clear:both;
+  float:left;
+  margin-top:10px; 
+}
+  </style>
+
+<h2>Login</h2>
+
+<form>
+    
+     <center>
+        <div class="slds-grid">
+            <div class="slds-col slds-size_2-of-6"></div>
+            <div class="slds-col slds-size_2-of-6">
+                <div Id="iddiv">
+                    <span style="font-family: Arial Unicode MS; font-size: 16pt; align=center; !important;">
+                        <b>Solo uno de ellos puede ingresar, arrastralo a la caja </b>
+                    </span>
+                </div>
+            </div>
+            <div class="slds-col slds-size_2-of-6"></div>
+        </div>
+    </center>
+   <input type="text" class="u-name" placeholder="Username" size="25"/>
+   <input type="text" class="p-word" placeholder="Password" size="25"/>
+  
+   <div class="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+     <p class="box-text">Arrastra las imagenes aquí</p>
+   </div>
+   <div class="images">
+       <img id="drag1" src="{!URLFOR($Resource.AgentAvatar)}" draggable="true" ondragstart="drag(event)" width="75" height="75"/>
+       <img id="drag2" src="{!URLFOR($Resource.AgentAvatar)}" draggable="true" ondragstart="drag(event)" width="75" height="75"/>
+       <img id="drag3" src="{!URLFOR($Resource.AgentAvatar)}" draggable="true" ondragstart="drag(event)" width="75" height="75"/>
+  </div>
+  
+  <input type="button" class="l-button" value="Login"/>
+</form>
+</apex:page>

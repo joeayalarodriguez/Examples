@@ -1,0 +1,100 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+	<aura:attribute name="Asegurado" type="Account[]"/>
+    <aura:attribute name="newAccount" type="Account"
+         default="{ 'sobjectType': 'Account',
+                        'Name': '',
+                        'FirstName': '',
+                        'NaLastNameme': '',
+                        'Tipo_de_Identificacion__c': '',
+                        'Numero_de_documento__c': '',
+                        'PersonEmail': ''}"/>
+    <aura:attribute name="options" type="List" default="[
+                                                            {'label': 'NIT', 'value': 'NIT'},
+                                                            {'label': 'Cédula de ciudadanía', 'value': 'Cédula de ciudadanía'},
+                                                            ]"/> 
+    <!-- PAGE HEADER -->
+        <lightning:layout class="slds-page-header slds-page-header--object-home">
+            <lightning:layoutItem>
+                <lightning:icon iconName="standard:scan_card" alternativeText="Información Asegurado"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="horizontal-small">
+                <div class="page-section page-header">
+                    <h1 class="slds-text-heading--label">Consulta Externa</h1>
+                    <h2 class="slds-text-heading--medium">Autorizaciones</h2>
+                </div>
+            </lightning:layoutItem>
+        </lightning:layout>
+        
+        <lightning:layout>
+            <lightning:layoutItem padding="around-small" size="6">       
+                <div aria-labelledby="newexpenseform">
+                    <!-- BOXED AREA -->
+                    <fieldset class="slds-box slds-theme--default slds-container--large">
+                        <legend id="newexpenseform" class="slds-text-heading--small 
+                                                           slds-p-vertical--medium">
+                            Información Asegurado
+                        </legend>
+                        
+                        <!-- CREATE NEW EXPENSE FORM -->
+                        <form class="slds-form--stacked">   
+                            
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning:input aura:id="Aseguradoform" label="Apellidos"
+                                                     name="apellidos"
+                                                     value="{!v.newAccount.NaLastNameme}"
+                                                     required="true"
+                                                     messageWhenValueMissing="Debes diligenciar el apellido del asegurado"/>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning:input aura:id="Aseguradoform" label="Nombres"
+                                                     name="nombres"
+                                                     value="{!v.newAccount.FirstName}"
+                                                     required="true"
+                                                     messageWhenValueMissing="Debes diligenciar el nombre del asegurado"/>
+                                </div>
+                            </div>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning:combobox aura:id="Aseguradoform" name="Tipo" label="Tipo de Documento"
+                                                        value="{!v.Tipdoc}" 
+                                                        placeholder="Seleccione tipo de Identificación" 
+                                                        options="{!v.options }"                                    
+                                                        required="true"
+                                                        messageWhenValueMissing="Debes seleccionar el tipo de identificación"/>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning:input aura:id="Aseguradoform" label="Número de identificación"
+                                                     name="numidentificacion"
+                                                     value="{!v.newAccount.Numero_de_documento__c}"
+                                                     required="true"
+                                                     messageWhenValueMissing="Debes diligenciar el número de identificación"/>
+                                </div>
+                            </div>    
+                            
+                            
+                            
+                            
+                            <lightning:input aura:id="Aseguradoform" label="Correo electrónico" type="email"
+                                             name="email" 
+                                             value="{!v.newAccount.PersonEmail}"
+                                             required="true"
+                                             messageWhenValueMissing="Debes diligenciar el correo del asegurado"/>
+                            <lightning:button label="Solicitar Autorización" 
+                                              class="slds-m-top--medium"
+                                              variant="brand"
+                                              onclick="{!c.consulta}"/>
+                        </form>
+                        <!-- / CREATE NEW EXPENSE FORM -->
+                        
+                    </fieldset>
+                    <!-- / BOXED AREA -->
+                </div>
+                <!-- / CREATE NEW EXPENSE -->
+                <!-- [[ expense form goes end ]] -->     
+            </lightning:layoutItem>
+        </lightning:layout>
+    
+    
+    
+</aura:component>

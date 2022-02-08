@@ -1,0 +1,11 @@
+<aura:component >
+    <c:ComponenteBasico />    
+    
+    <ul>
+        <li class="red"> Este es un texto rojo</li>	
+        <li class="blue"> Este es un texto azul</li>
+        <li class="green"> Este es un texto verde</li>
+    </ul>
+        
+    
+</aura:component>

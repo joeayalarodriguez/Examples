@@ -1,0 +1,23 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:attribute name="titulo" type="String" default="Explorando funcionalidades de lightning"/>
+    <aura:attribute name="mensaje" type="String" default="Generando componentes"/>
+    <aura:attribute name="verModal" type="Boolean" default="false"/>   
+    
+    <div class="c-container">
+    	<aura:if isTrue="{!v.verModal}">
+            <c:EjercicioPantallaModal titulo="{!v.titulo}" mensaje="{!v.mensaje}" verModal="{!v.verModal}"/>
+        </aura:if>
+        
+        <lightning:card footer="Sistema de alta seguridad" title="Bienvenidos al sistema de inventarios">
+            <aura:set attribute="actions">
+                <lightning:button label="Abrir formulario" onclick="{!c.openmodal}"/>
+            </aura:set>
+            <p class="slds-p-horizontal_small">
+                por favor ingrese....
+            </p>
+        </lightning:card>
+              
+        
+    </div>
+</aura:component>

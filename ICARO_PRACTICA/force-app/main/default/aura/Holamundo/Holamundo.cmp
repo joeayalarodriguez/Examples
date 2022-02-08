@@ -1,0 +1,23 @@
+<aura:component >
+    <c:helloHeading />
+    <Br></Br>
+	<p>Bienvenido a la aplicación de Creación de Contratos</p>
+    <p>Se generará la primera aplicación</p>
+    
+    <div class="other slds-text-heading_large"  >
+      Hello, HTML!
+    </div>
+    <h2>si.</h2>
+    
+  <ul>
+    <li class="white">I'm diferent.</li>
+    <li class="red">I'm red.</li>
+
+    <li class="blue">I'm blue.</li>
+
+    <li class="green">I'm green.</li>
+
+  </ul>
+
+    
+</aura:component>

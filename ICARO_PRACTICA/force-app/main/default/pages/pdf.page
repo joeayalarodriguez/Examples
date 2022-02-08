@@ -1,0 +1,99 @@
+<apex:page renderAs="pdf" showHeader="false" sidebar="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">
+    <html>
+    <head>
+        <style>
+            @page {
+                size: letter;
+                margin: 25mm;
+                @top-center {
+                    content: "Sample";
+                }
+                @bottom-center {
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+            .page-break {
+                display:block;
+                page-break-after:always;
+            }
+            body {
+                font-family: Arial Unicode MS;
+            }
+            
+            .companyName {
+            font: bold 30px; color: red; 
+            }  
+            
+          
+            
+        
+            
+        </style>
+    </head>
+    <body>
+    <div class="page-break">Page A
+        <td class="a1">Logotipo</td>
+        
+        <div class="TOC">
+         <ul>
+         <li><a href="#PageSetup">Page setup</a></li>
+         <li><a href="#PageHeaderFooter">Running header and page number</a></li>
+         <li><a href="#Counters">Counter</a></li>
+         </ul>
+        </div>
+
+    </div>
+    <div class="page-break">Page B
+      
+        
+        <table width="99%" border="0px" cellspacing="0px" cellpadding="0px">
+          <tr>
+            <td>titulo</td>
+            <td>ruta</td>
+            <td>flechas</td>
+          </tr>
+        </table>
+        
+        
+        <table width="99%" border="0px" cellspacing="0px" cellpadding="0px">
+          <tr>
+            <td>menu</td>
+            <td>contenido</td>
+          </tr>
+        </table>
+        <table width="99%" border="0px" cellspacing="0px" cellpadding="0px">
+          <tr>
+            <td>contador</td>
+            <td>opciones</td>
+            <td>flechas</td>
+          </tr>
+        </table>
+        <table width="99%" border="0px" cellspacing="0px" cellpadding="0px">
+          <tr>
+            <td>fecha</td>
+            <td>hueco</td>
+            <td>firma</td>
+          </tr>
+        </table>
+        
+        
+        
+    </div>
+    <div>Page C
+        
+        <center>
+        <h1>New Account Name!</h1>
+     
+        <apex:panelGrid columns="1" width="100%">
+            <apex:outputText value="Nombre " styleClass="companyName"/>
+            <apex:outputText value="{!NOW()}"></apex:outputText>
+        </apex:panelGrid>
+        </center>
+        
+        
+    
+
+    </div>
+    </body>
+   </html>
+</apex:page>
